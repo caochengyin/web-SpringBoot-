@@ -1,0 +1,7 @@
+#当properties文件和yml文件共存时，以properties文件为准
+server:
+  #接口
+  port: 8082
+  #上下文
+  servlet:
+    context-path: /webyml

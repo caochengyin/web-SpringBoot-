@@ -1,0 +1,7 @@
+#测试环境配置文件
+server:
+  #配置端口号
+  port: 8017
+  servlet:
+    #配置上下文
+    context-path: /webtest
