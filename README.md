@@ -4,4 +4,6 @@
 ####当前项目中包含的学习项目有:
 1. 配置文件(.properties/.yml)
 2. @Values注解学习
+3. 集成JSP
+4. 集成MyBatis
 

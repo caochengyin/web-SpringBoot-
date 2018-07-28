@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caochengyin.dao.UserInfoDao">
+    <resultMap id="BaseResultMap" type="com.caochengyin.model.UserInfo">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="create_user" jdbcType="VARCHAR" property="createUser"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_user" jdbcType="VARCHAR" property="updateUser"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="ts" jdbcType="TIMESTAMP" property="ts"/>
+    </resultMap>
+
+    <sql id="Base_Columns_List">
+        select
+            id,
+            user_id,
+            user_name,
+            age,
+            is_delete,
+            create_user,
+            create_time,
+            update_user,
+            update_time,
+            ts
+    </sql>
+    <select id="getAllUserInfo" resultMap="BaseResultMap">
+        <include refid="Base_Columns_List"/>
+        from
+        user_info
+        where
+        is_delete = 0
+    </select>
+</mapper>
