@@ -29,6 +29,7 @@
             update_time,
             ts
     </sql>
+
     <select id="getAllUserInfo" resultMap="BaseResultMap">
         <include refid="Base_Columns_List"/>
         from
@@ -36,4 +37,23 @@
         where
         is_delete = 0
     </select>
+    <select id="getUserInfoById" resultMap="BaseResultMap" parameterType="com.caochengyin.model.UserInfo">
+        <include refid="Base_Columns_List"/>
+        from
+        user_info
+        where
+        id = #{id} and
+        is_delete = 0
+    </select>
+
+    <update id="updateNameById">
+        update
+            user_info
+        set
+            user_name = #{userName}
+        where
+            id = #{id}
+            and
+            is_delete = 0
+    </update>
 </mapper>
